@@ -3,7 +3,6 @@ const CHAIN_ID = require("../constants/chainIds.json")
 
 async function main() {
     const sender = (await hre.ethers.getSigners())[0]
-    console.log(sender.address);
     let toAddress = sender.address
     let qty = hre.ethers.utils.parseEther('1')
 
