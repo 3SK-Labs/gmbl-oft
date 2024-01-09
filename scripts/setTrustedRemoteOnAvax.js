@@ -1,20 +1,20 @@
 const hre = require("hardhat")
 const fs = require("fs")
 const CHAIN_ID = require("../constants/chainIds.json")
-const { getDeploymentAddresses } = require("../utils/readStatic")
 
 async function main() {
-  // get local contract
-  const localContractInstance = await hre.ethers.getContract("GmblTokenOFT")
-
   // get deployed remote contract address
-  const remoteAddress = getDeploymentAddresses()["GmblTokenProxyOFT"]
+  const localAddress = '0x236626887687bf6a102269207f8f0A08549Ae4f4'
+  const remoteAddress = '0x236626887687bf6a102269207f8f0A08549Ae4f4'
+
+  // get local contract
+  const localContractInstance = await hre.ethers.getContractAt("GmblTokenOFT", localAddress);
 
   // get remote chain id
-  const remoteChainId = CHAIN_ID["avalanche"]
+  const remoteChainId = CHAIN_ID["arbitrum"]
 
   // concat remote and local address
-  let remoteAndLocal = hre.ethers.utils.solidityPack(["address", "address"], [remoteAddress, localContractInstance.address])
+  let remoteAndLocal = hre.ethers.utils.solidityPack(["address", "address"], [remoteAddress, localAddress])
 
   // check if pathway is already set
   const isTrustedRemoteSet = await localContractInstance.isTrustedRemote(remoteChainId, remoteAndLocal)
