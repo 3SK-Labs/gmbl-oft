@@ -1,0 +1,9 @@
+{
+  "ethereum":         101,
+  "avalanche":        106,
+  "arbitrum":         110,
+
+  "goerli":           10121,
+  "fuji":             10106,
+  "arbitrum-goerli":  10143
+}
