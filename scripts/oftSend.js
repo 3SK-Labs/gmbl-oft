@@ -7,7 +7,6 @@ async function main() {
     let qty = hre.ethers.utils.parseEther('1')
 
     const localAddress = '0x236626887687bf6a102269207f8f0A08549Ae4f4'
-    const remoteAddress = '0x236626887687bf6a102269207f8f0A08549Ae4f4'
 
     let toAddressBytes = ethers.utils.defaultAbiCoder.encode(["address"], [toAddress])
 
