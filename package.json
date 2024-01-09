@@ -8,7 +8,7 @@
     "deploy-proxy-oft": "yarn hardhat --network arbitrum run scripts/deployGmblTokenProxyOFT.js",
     "deploy-oft": "yarn hardhat --network avalanche run scripts/deployGmblTokenOFT.js",
     "set-remote-oft": "yarn hardhat --network avalanche run scripts/setTrustedRemoteOnAvax.js",
-    "set-remote-proxy-oft": "echo TODO",
+    "set-remote-proxy-oft": "yarn hardhat --network arbitrum run scripts/setTrustedRemoteOnArbitrum.js",
     "create-etherscan-verify-json": "echo TODO",
     "create-snowtrace-verify-json": "echo TODO"
   },
