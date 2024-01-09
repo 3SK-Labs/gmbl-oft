@@ -5,9 +5,12 @@
   "license": "MIT",
   "scripts": {
     "test": "yarn hardhat test",
-    "deploy": "yarn hardhat run scripts/deploy.js",
-    "create-etherscan-verify-json": "yarn hardhat run scripts/createArbiscanVerificationJson.js",
-    "create-snowtrace-verify-json": "yarn hardhat run scripts/createSnowtraceVerificationJson.js"
+    "deploy-proxy-oft": "yarn hardhat --network arbitrum run scripts/deployGmblTokenProxyOFT.js",
+    "deploy-oft": "yarn hardhat --network avalanche run scripts/deployGmblTokenOFT.js",
+    "set-remote-oft": "echo TODO",
+    "set-remote-proxy-oft": "echo TODO",
+    "create-etherscan-verify-json": "echo TODO",
+    "create-snowtrace-verify-json": "echo TODO"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.9.3",
