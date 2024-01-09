@@ -4,11 +4,12 @@ const hre = require("hardhat")
 const fs = require("fs")
 
 async function main() {
+  const contractName = "GmblTokenProxyOFT"
   const gmblTokenAddr = '0xE9A5aF50874c0ef2748b5DB70104B5ccb5557f6d';
-  const GmblTokenProxyOFT = await hre.ethers.getContractFactory("GmblTokenProxyOFT")
-  const gmblTokenProxyOFT = await (await GmblTokenProxyOFT.deploy(gmblTokenAddr, LZ_ENDPOINTS['arbitrum'])).deployed()
-  console.info("Deployed GmblTokenProxyOFT:", gmblTokenProxyOFT.address)
-  const addressFile = `./deployedAddresses/GmblTokenProxyOft.${hre.network.name}`
+  const GmblTokenProxyOFT = await hre.ethers.getContractFactory(contractName)
+  const gmblTokenProxyOFT = await (await GmblTokenProxyOFT.deploy(gmblTokenAddr, LZ_ENDPOINTS[`${hre.network.name}`])).deployed()
+  console.info("Deployed ${contractName}:", gmblTokenProxyOFT.address)
+  const addressFile = `./deployedAddresses/${contractName}.${hre.network.name}`
   fs.mkdirSync('./deployedAddresses/', { recursive: true })
   fs.writeFileSync(addressFile, gmblTokenProxyOFT.address)
   console.info(`Saved address file to: ${addressFile}`)
