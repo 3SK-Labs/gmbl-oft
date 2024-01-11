@@ -13,28 +13,41 @@ module.exports = {
   },
   networks: {
     arbitrum: {
-      url: `${process.env.ARBITRUM_RPC}`,
-      accounts: [`${process.env.DEPLOYER_PK}`]
+      url: process.env.ARBITRUM_RPC,
+      accounts: [process.env.DEPLOYER_PK]
     },
     avalanche: {
-      url: `${process.env.AVAX_RPC}`,
-      accounts: [`${process.env.DEPLOYER_PK}`]
+      url: process.env.AVAX_RPC,
+      accounts: [process.env.DEPLOYER_PK]
+    },
+    snowtrace: {
+      url: 'https://api.avax.network/ext/bc/C/rpc',
+      accounts: [process.env.DEPLOYER_PK]
     }
   },
   etherscan: {
       apiKey: {
-          arbitrum: `${process.env.ARBISCAN_API_KEY}`,
+          arbitrum: process.env.ARBISCAN_API_KEY,
+          snowtrace: "snowtrace"
       },
       customChains: [
-          {
-              network: "arbitrum",
-              chainId: 42161,
-              urls: {
-                  apiURL: "https://api.arbiscan.io/api",
-                  browserURL: "https:/arbiscan.io/",
-              },
-          },
-      ],
+        {
+            network: "arbitrum",
+            chainId: 42161,
+            urls: {
+                apiURL: "https://api.arbiscan.io/api",
+                browserURL: "https:/arbiscan.io/",
+            },
+        },
+        {
+          network: "snowtrace",
+          chainId: 43114,
+          urls: {
+            apiURL: "https://api.routescan.io/v2/network/mainnet/evm/43114/etherscan",
+            browserURL: "https://avalanche.routescan.io"
+          }
+        }
+      ]
   },
   sourcify: {
       enabled: true,

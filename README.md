@@ -10,3 +10,9 @@ LayerZero OFT contracts for:
 ```bash
 $ npx hardhat verify --constructor-args constants/arb_arguments.js --contract "contracts/GmblTokenProxyOFT.sol:GmblTokenProxyOFT" --network arbitrum 0x236626887687bf6a102269207f8f0A08549Ae4f4
 ```
+
+## avax verification
+
+```bash
+gmbl-oft % npx hardhat verify --constructor-args constants/avax_arguments.js --contract "contracts/GmblTokenOFT.sol:GmblTokenOFT" --network snowtrace 0x236626887687bf6a102269207f8f0A08549Ae4f4
+```
