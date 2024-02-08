@@ -12,6 +12,10 @@ module.exports = {
     }
   },
   networks: {
+    ethereum: {
+      url: process.env.ETH_RPC,
+      accounts: [process.env.DEPLOYER_PK]
+    },
     arbitrum: {
       url: process.env.ARBITRUM_RPC,
       accounts: [process.env.DEPLOYER_PK]
