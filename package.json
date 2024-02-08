@@ -9,6 +9,7 @@
     "deploy-oft": "yarn hardhat --network avalanche run scripts/deployGmblTokenOFT.js",
     "deploy-eth-oft": "yarn hardhat --network ethereum run scripts/deployGmblTokenOFT.js",
     "set-remote-oft": "yarn hardhat --network avalanche run scripts/setTrustedRemoteOnAvax.js",
+    "set-remote-oft-eth": "yarn hardhat --network ethereum run scripts/setTrustedRemoteOnEth.js",
     "set-remote-proxy-oft": "yarn hardhat --network arbitrum run scripts/setTrustedRemoteOnArbitrum.js",
     "set-gas-avax": "yarn hardhat --network avalanche run scripts/setMinGasAvax.js",
     "set-gas-arb": "yarn hardhat --network arbitrum run scripts/setMinGasArbitrum.js",

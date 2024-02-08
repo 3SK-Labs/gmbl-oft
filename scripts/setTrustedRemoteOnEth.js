@@ -4,14 +4,14 @@ const CHAIN_ID = require("../constants/chainIds.json")
 
 async function main() {
   // get deployed remote contract address
-  const localAddress = '0x236626887687bf6a102269207f8f0A08549Ae4f4'
-  const remoteAddress = '0xFbf1a6a5b0758Db15A7AaAe403DbbE7A9cc8670A'
+  const localAddress = '0xFbf1a6a5b0758Db15A7AaAe403DbbE7A9cc8670A'
+  const remoteAddress = '0x236626887687bf6a102269207f8f0A08549Ae4f4'
 
   // get local contract
-  const localContractInstance = await hre.ethers.getContractAt("GmblTokenProxyOFT", localAddress);
+  const localContractInstance = await hre.ethers.getContractAt("GmblTokenOFT", localAddress);
 
   // get remote chain id
-  const remoteChainId = CHAIN_ID["ethereum"]
+  const remoteChainId = CHAIN_ID["arbitrum"]
 
   // concat remote and local address
   let remoteAndLocal = hre.ethers.utils.solidityPack(["address", "address"], [remoteAddress, localAddress])
