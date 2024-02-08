@@ -11,7 +11,7 @@ async function main() {
     let toAddressBytes = ethers.utils.defaultAbiCoder.encode(["address"], [toAddress])
 
     // get remote chain id
-    const remoteChainId = CHAIN_ID['avalanche']
+    const remoteChainId = CHAIN_ID['ethereum']
 
     // get local contract
     const localContractInstance = await hre.ethers.getContractAt("GmblTokenProxyOFT", localAddress);

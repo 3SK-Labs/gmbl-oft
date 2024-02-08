@@ -14,7 +14,7 @@
     "set-gas-avax": "yarn hardhat --network avalanche run scripts/setMinGasAvax.js",
     "set-gas-eth": "yarn hardhat --network ethereum run scripts/setMinGasEth.js",
     "set-gas-arb": "yarn hardhat --network arbitrum run scripts/setMinGasArbitrum.js",
-    "send-to-avax": "yarn hardhat --network arbitrum run scripts/oftSend.js"
+    "send-oft": "yarn hardhat --network arbitrum run scripts/oftSend.js"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.9.3",
