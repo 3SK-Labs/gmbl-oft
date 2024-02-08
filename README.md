@@ -16,3 +16,9 @@ $ npx hardhat verify --constructor-args constants/arb_arguments.js --contract "c
 ```bash
 gmbl-oft % npx hardhat verify --constructor-args constants/avax_arguments.js --contract "contracts/GmblTokenOFT.sol:GmblTokenOFT" --network snowtrace 0x236626887687bf6a102269207f8f0A08549Ae4f4
 ```
+
+## ethereum verification
+
+```bash
+gmbl-oft % npx hardhat verify --constructor-args constants/eth_arguments.js --contract "contracts/GmblTokenOFT.sol:GmblTokenOFT" --network ethereum 0xFbf1a6a5b0758Db15A7AaAe403DbbE7A9cc8670A
+```

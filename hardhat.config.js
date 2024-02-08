@@ -32,9 +32,18 @@ module.exports = {
   etherscan: {
       apiKey: {
           arbitrum: process.env.ARBISCAN_API_KEY,
-          snowtrace: "snowtrace"
+          snowtrace: "snowtrace",
+          ethereum: process.env.ETHEREUM_API_KEY,
       },
       customChains: [
+        {
+            network: "ethereum",
+            chainId: 1,
+            urls: {
+                apiURL: "https://api.etherscan.io/api",
+                browserURL: "https://etherscan.io/",
+            },
+        },
         {
             network: "arbitrum",
             chainId: 42161,
